@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function btn(){
+            var box=document.getElementById("box");
+            var img=document.getElementById("img");
+//            box.appendChild(img);//添加至div
+            var img01 =img.cloneNode();
+            box.appendChild(img01);
+        }
+    </script>
+</head>
+<body>
+    <div id="box" style="width: 100%; border: 1px solid black; ">
+        <img src="a02.png">
+    </div>
+    <img id="img" src="a01.png">
+    <button  onclick="btn()" >button</button>
+</body>
+</html>

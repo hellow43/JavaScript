@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        1．文本域校验，要求获取焦点提示输入3-5个字符，失去焦点判断是否正确，如果正确则显示绿色对号，错误显示红叉。
+        function p1(){
+            var p =document.getElementById("span");
+            p.innerHTML="请输入3~5个字符";
+        }
+        function p2(){
+            var p =document.getElementById("span").value;
+
+            if(p.length<=5&& p.length>=3) {
+                p.innerHTML="√";
+            }else{
+                p.innerHTML="×";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" onfocus="p1()" onblur="p2()" >
+    <span id="span" ></span>
+
+
+</body>
+</html>

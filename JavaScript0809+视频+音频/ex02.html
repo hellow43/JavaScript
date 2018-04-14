@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+        function start01(){
+            var v1=document.getElementById("v1");
+            var btn=document.getElementById("btn");
+            v1.play();
+            btn.innerHTML="暂停";
+            btn.onclick=stop01;
+        }
+        function stop01(){
+            var v1=document.getElementById("v1");
+            var btn=document.getElementById("btn");
+            v1.pause();
+            btn.innerHTML="开始";
+            btn.onclick=start01;
+        }
+
+
+        function sound(){
+            var a= document.getElementById("v1");//不能把.muted加在该句后面，不是属性，所以不能加在后面，加在这句后面，只能执行一次
+            //只有属性能直接加在该句后面，方法不能
+            var btn01= document.getElementById("btn01");
+            if(a.muted){
+                a.muted=false;
+               btn01.innerHTML="静音";
+            }else{
+                a.muted=true;
+                btn01.innerHTML="不静音";
+            }
+        }
+           function kuaijin(){
+               var a= document.getElementById("v1");
+               a.playbackRate=5;
+           }
+        function kuaitui(){
+            var a= document.getElementById("v1");
+            a.playbackRate=0.25;
+        }
+    </script>
+</head>
+<body>
+<video id="v1" loop controls  poster="a02.png">
+    <!--poster  等待播放时的画面   -->
+    <!--loop   循环播放-->
+    <source src="movie.webm" type="video/webm">
+    <source src="movie.ogg" type="video/ogg">
+    <!--controls   控制面板-->
+    不支持播放，请更换浏览器<!-- 不支持时，所显示的内容-->
+</video>
+<button onclick="start01()" id="btn">开始</button>
+<button id="btn01" onclick="sound()">静音</button>
+<button id="btn02" onclick="kuaijin()">五倍速</button>
+<button id="btn03" onclick="kuaitui()">0.25倍速</button>
+</body>
+</html>

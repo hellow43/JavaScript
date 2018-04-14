@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #span{font-size:20px; }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        function a(){
+           if($("#uname").val().length==0){
+               $("#span").html("请输入用户名");
+               $("#pwd").val("");
+           }else if($("#pwd").val().length==0){
+               //注！！！else if
+                $("#span").html("请输入密码");
+            }else{
+                $("form").submit();
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="ex07.html">
+    用户名：<input type="text" id="uname"><br>
+    密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" id="pwd">
+</form>
+<button  onclick="a()">登录</button>
+<!--只能在<form></form>外面-->
+<!--若想要写在<form></form>里面,用<input>标签-->
+<br>
+<span id="span"></span>
+</body>
+</html>

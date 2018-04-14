@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+//        23.换一批效果。
+        var arr=[
+                  ["img/a01.png","img/a01.png","img/a01.png","img/a01.png","img/a01.png"],
+                  ["img/a02.png","img/a02.png","img/a03.png","img/a02.png","img/a02.png"],
+                  ["img/a03.png","img/a03.png","img/a03.png","img/a03.png","img/a03.png"],
+                  ["img/a04.png","img/a04.png","img/a04.png","img/a04.png","img/a04.png"],
+                  ["img/a05.png","img/a05.png","img/a05.png","img/a05.png","img/a05.png"]
+        ];
+        var i=0;
+        function t23(){
+//            var img01=document.getElementsByTagName("img");
+//            for(var j=0;j<arr.length;j++){
+//                for(var i=0;i<img01[i].length;i++){
+//                    img[i].src=arr[i][j];
+//                }
+//            }
+//            不能这样写，因为要点一下img的i加一
+
+            i++;
+            if(i>=img01.length){
+                i=0;
+            }
+
+            for (var j=0;j<img01.length;j++){
+                img01[j].src=arr[i][j];
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" alt=""/>
+    <img src="img/a01.png" alt=""/>
+    <img src="img/a01.png" alt=""/>
+    <img src="img/a01.png" alt=""/>
+    <img src="img/a01.png" alt=""/>
+    <button onclick="t23()">换一批</button>
+</body>
+</html>

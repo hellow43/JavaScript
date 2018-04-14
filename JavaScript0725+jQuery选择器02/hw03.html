@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+//        设置页面所有name为interest的标签，边框为红色。
+        function change(){
+            $("input[class='interest']").css("border","2px solid red");
+        }
+    </script>
+</head>
+<body>
+    <input type="text" class="interest">
+    <input type="text" class="interest">
+    <input type="text">
+    <input type="text">
+<button onclick="change()">change</button>
+</body>
+</html>

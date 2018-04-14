@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #list { height: 20px; width:300px;        }
+        #list li{width:20px; border:solid 1px black;border-radius: 10px;background:black;
+            color:white; margin:0 10px;  text-align: center; float:left;}
+        .bg {width:20px; border:solid 1px black;border-radius: 10px;background:white!important;
+            color:black !important; margin:0 10px;  text-align: center; float:left; list-style: none; cursor: pointer; }
+    </style>
+    <script>
+
+        function change(i){
+            var src=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var list=document.getElementById("list");
+            var li=list.getElementsByTagName("li");
+
+            var al=document.getElementById("img") ;
+            for(var j=0;j<li.length;j++){
+                li[j].className="";
+            }
+
+            li[i].className="bg";
+            al.src=src[i];
+            if(i>=src.length){
+                i=0;
+            }
+            al.src=src[i];
+
+        }
+    </script>
+    <script>
+        var i=0;
+        function exchange(){
+//            点击按钮，图片变换，下方的小圆点也随之变化
+            var src=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var list=document.getElementById("list");
+            var li=list.getElementsByTagName("li");
+            var al=document.getElementById("img") ;
+            for(var j=0;j<li.length;j++){
+               li[j].className=""; // 使所有li的name值为空，不使用bg的效果
+            }
+
+            i++;
+
+            if(i>=src.length){
+                i=0;
+            }
+            al.src=src[i];
+            li[i].className="bg";
+
+        }
+    </script>
+</head>
+<body>
+<img src="img/a01.png" id="img" >
+<ul id="list">
+    <li class="bg" onclick="change(0)" >1</li>
+    <li onclick="change(1)">2</li>
+    <li onclick="change(2)">3</li>
+    <li onclick="change(3)">4</li>
+    <li onclick="change(4)">5</li>
+</ul>
+<button  onclick="exchange()">连续变换</button>
+</body>
+</html>

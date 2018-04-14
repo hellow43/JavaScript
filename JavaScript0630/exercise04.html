@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{width:128px; height:128px; margin-left:300px; margin-top:150px; }
+        .img01{width:50px; height:50px; }
+        #list{margin-top:300px; margin-left:500px ;}
+        div
+    </style>
+    <script>
+        function pic01(){
+            var div=document.getElementById("box");
+            var img01=div.getElementsByTagName("img");
+            for(var j=0;j<img01.length;j++){
+                img01[j].style.display="none";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="img/a01.png">
+        <img src="img/a02.png">
+        <img src="img/a03.png">
+        <img src="img/a04.png">
+    </div>
+    <ul id="list" >
+        <img class="fl img01" src="img/a01.png" onclick="pic01(0)">
+        <img class="fl img01" src="img/a02.png" onclick="pic01(1)">
+        <img class="fl img01" src="img/a02.png" onclick="pic01(2)">
+        <img  class="fl img01" src="img/a04.png">
+    </ul>
+
+</body>
+</html>

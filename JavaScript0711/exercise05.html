@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var i=1;
+        var h=0;
+        var m=0;
+        var sec=0;
+        var msec=1;
+
+        function s01(){
+            var d =document.getElementById("time");
+            d.innerHTML=h+":"+m+":"+sec+":"+msec;
+            for(var j=0;j<=10;j++){
+                msec++;
+            }if(msec==10){
+                msec=0;
+                sec++;
+            }else if(sec>=60){
+                sec=0;
+                m++;
+            } else
+            var s=document.getElementById("btn");//不能当做公有变量，如果当做公有变量，需在整个函数都加载完后才得以调用
+            s.value="暂停";
+            s.onclick=s02;
+            setInterval("s01()",100);
+        }
+        function s02(){
+            console.log(i--);
+            var s=document.getElementById("btn");
+            s.value="开始";
+            s.onclick=s01;
+        }
+    </script>
+</head>
+<body>
+    <div id="time">0:0:0:0</div>
+    <input type="button" id="btn" value="开始" onclick="s01()">
+    <button id="stop" onclick="s03()">停止</button>
+</body>
+</html>

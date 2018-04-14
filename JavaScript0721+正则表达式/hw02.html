@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        2.年龄检测
+        function jc01(){
+            var age=document.getElementById("age");
+            var span=document.getElementById("span");
+            var reg=/^[0-1]?[\d][\d]$/;
+            if(reg.test(age.value)){
+                span.innerHTML="年龄输入符合要求";
+            }else{
+                span.innerHTML="年龄输入不符合要求";
+            }
+            age.onfocus=function(){
+                span.innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+请输入年龄：<input type="text" id="age">
+<button onclick="jc01()">检测</button>
+<span id="span"></span>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        3．有一个下拉列表，选择不同项显示不同的图片
+        function p01(i){
+            var img=document.getElementsByTagName("img");
+            img[0].src= i.value;
+        }
+    </script>
+</head>
+<body>
+    <select onchange="p01(this)">
+        <option value="img/a01.png">01</option>
+        <option value="img/a02.png">02</option>
+        <option value="img/a03.png">03</option>
+        <option value="img/a04.png">04</option>
+        <option value="img/a05.png">05</option>
+    </select>
+
+        <img src="img/a01.png" style=" position:absolute; left:150px; top:150px; ">
+        <!--<img src="img/a02.png" style="position:absolute; left:150px; top:150px; display: none;">-->
+        <!--<img src="img/a03.png" style="position:absolute; left:150px; top:150px; display: none;">-->
+        <!--<img src="img/a04.png" style="position:absolute; left:150px; top:150px; display: none;">-->
+        <!--<img src="img/a05.png" style="position:absolute; left:150px; top:150px; display: none;">-->
+
+</body>
+</html>

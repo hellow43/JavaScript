@@ -1,0 +1,66 @@
+郑茜茹 14:59:47 (多人发送)
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../JavaScript0807+ajax+json/jquery.js"></script>
+    <script>
+        var arr = [];
+        var arr1 = ["1F","2F","3F","4F","5F","6F"];
+        var arr2 = ["服饰","女装","箱包","饰品","母婴","家居"];
+
+        $(function(){
+            var div = $("#content > div");
+            $.each(div,function(i){
+                arr[i] = $(div[i]).offset().top;
+                console.log(arr);
+            });
+        });
+        $(window).scroll(function(){
+            var top = $("#step").offset().top; // div 距离body的距离
+            var top1 = $(window).scrollTop(); // 滚动条居上的距离
+            var height = $(window).height(); // 屏幕的高度
+            if(top1 >= (top - height)){
+                $("#a2").show();
+            }else{
+                $("#a2").hide();
+            }
+            $("#a2 div").css({background:"none",color:"#000"});
+            $.each(arr1,function(i){
+                var div = $("#a2 div");
+                $(div[i]).html(arr1[i]);
+            });
+            $.each(arr,function(i){
+                if(top1 <= arr[i]){
+                    $("#a2 > div:eq("+ i +")").css({background:"red",color:"#fff"});
+                    $("#a2 > div:eq("+ i +")").html(arr2[i]);
+                    return false;
+                }
+            });
+            for(var i = 0; i < arr.length; i++){
+
+            }
+        });
+    </script>
+</head>
+<body style="margin: 0;">
+<div style=" height: 700px;">顶部</div>
+<div id="content" style="width: 1000px; margin: auto;">
+    <div id="step" style=" height: 700px;">1楼</div>
+    <div style=" height: 700px;">2楼</div>
+    <div style=" height: 700px;">3楼</div>
+    <div style=" height: 700px;">4楼</div>
+    <div style=" height: 700px;">5楼</div>
+    <div style=" height: 700px;">6楼</div>
+</div>
+<div id="a2" style="height: 300px;  display: none; width: 50px; position: fixed; top: 50%; left:10px; margin: -150px 0 0 0;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+</div>
+</body>
+</html>

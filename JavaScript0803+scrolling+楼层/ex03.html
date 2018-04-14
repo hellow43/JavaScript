@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       ul li{margin-top:3px; margin-left:20px;  }
+        .bg{background:green;}
+    </style>
+    <script src="../JavaScript0807+ajax+json/jquery.js"></script>
+    <script>
+        var top01=[];
+        var arr1 = ["1F","2F","3F","4F","5F","6F"];
+        var arr2 = ["服饰","女装","箱包","饰品","母婴","家居"];
+
+        $(function(){
+            for(var i=0;i< $("#box >div").length;i++){
+                top01[i]= $("#box > div:eq("+ i+")").offset().top;}
+            console.log(top01);
+        });
+
+        $(window).scroll(function(){
+                var top0 = $(window).scrollTop();//滚动条距上的距离
+                var top001 = $("#top001").offset().top;//一楼距上的距离
+                var height = $(window).height();//屏幕高度
+                if (top0 >= (top001 - height)) {
+                    $("#left").show();
+                } else {
+                    $("#left").hide();
+                }
+            $("#left li").removeClass("bg");
+            for(var i=0;i< $("#box >div").length;i++){
+                $("#left > li:eq("+ i+")").html(arr1[i]);
+            }
+//            for(var i=0;i< $("#box >div").length;i++){
+//                if(top0<=top01[i]){
+//                    $("#left > li:eq("+ i +")").addClass("bg");
+//                    $("#left > li:eq("+ i +")").html(arr2[i]);
+//                    break;
+//                }
+//            }
+            $.each(top01,function(i){
+                if(top0 <= top01[i]){
+                    $("#left > li:eq("+ i +")").addClass("bg");
+                    $("#left > li:eq("+ i +")").html(arr2[i]);
+                    return false;
+                }
+            });
+
+
+        });
+//
+//            var top1 =$("#a02").offset().top;//a02--一楼距上距离
+//            var top2 =$("#a03").offset().top;
+//            var top3 =$("#a04").offset().top;
+//            var top4 =$("#a05").offset().top;
+//            var top5 =$("#a06").offset().top;
+//            var top0 =$(window).scrollTop();//滚动条距上距离
+//            var height=$(window).height();
+//            for(i=0;i<$("#left li").length;i++){
+//                if(top0>=(top+"i")-height){
+//                    $("#left").show();
+//                }else{
+//                    $("#left").hide();
+//                }
+//            }
+//            if(top0>=(top1-height)){
+//                $("#left").show();
+//            }else if(top0>=(top2-height-top1)){
+//                $("#left").show();
+//                $("#left li").removeClass("bg");
+//                $("#left li:eq(1)").addClass("bg");
+//            }else if(top0>=(top3-height-top2-top1)){
+//                $("#left").show();
+//                $("#left li").removeClass("bg");
+//                $("#left li:eq(2)").addClass("bg");
+//            }
+//            else{
+//                $("#left").hide();
+//            }
+//        });
+    </script>
+</head>
+<body>
+<div  style="height: 700px;background: coral;">顶部</div>
+<div id="box">
+    <div id="top001"  style="height: 700px;background: cornflowerblue;">一楼</div>
+    <div style="height: 700px;background: cornflowerblue;">二楼</div>
+    <div  style="height: 700px;background: cornflowerblue;">三楼</div>
+    <div style="height: 700px;background: cornflowerblue;">四楼</div>
+    <div style="height: 700px;background: cornflowerblue;">五楼</div>
+    <div style="height: 700px;background: cornflowerblue;">六楼</div>
+</div>
+
+
+    <ul id="left"style="display:none; height: 300px; width:80px; background:white; margin:-150px 0 0 0;  position: fixed; left:-50px; top:50%;">
+        <li class="bg">TOP</li>
+        <li>1F</li>
+        <li>2F</li>
+        <li>3F</li>
+        <li>4F</li>
+        <li>5F</li>
+    </ul>
+
+</body>
+</html>

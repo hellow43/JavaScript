@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function child01(){
+            var box= document.getElementById("box");
+//            var s=box.childNodes;
+//            alert(s.length);//长度为11，因为空格算作文本节点，若不想将空格算作文本节点，取消空格
+            var c=box.firstChild.nextSibling;
+            c.src=a04.png;
+            var d=box.lastChild.previousSibling;
+            d.src=a01.png;
+            var e=box.parentNode;
+//            alert(e.nodeName);
+        }
+    </script>
+</head>
+<body>
+    <div id="box"><img src="a01.png"><img src="a02.png"><img src="a03.png"><img src="a04.png"><img src="a05.png "></div>
+    <button  onclick="child01()" >buttno</button>
+</body>
+</html>

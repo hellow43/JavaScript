@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function a(){
+            var canvas =  document.getElementById("canvas");
+            var can = canvas.getContext("2d");
+            can.strokeStyle = "#0f0";
+            can.lineWidth = 3;
+            can.shadowColor = "#000";
+            can.shadowBlur = 0;
+            can.shadowOffsetX = 5;
+            can.shadowOffsetY = 5;
+
+            can.beginPath(); // 开始绘制
+            can.moveTo(50,80);
+            can.lineTo(150,300);
+            can.stroke(); // 画
+            can.closePath(); // 结束绘制
+            can.beginPath();
+            can.strokeStyle = "#00f";
+            can.lineWidth = 1;
+            can.arc(200,200,50,0,-360,false);
+            can.stroke();
+            can.closePath();
+            can.beginPath();
+            can.fillStyle = "#ff0";
+            can.arc(350,350,50,0,360);
+            can.fill();
+            can.closePath();
+            can.beginPath();
+            can.rect(350,30,80,50);
+            can.fill();
+            can.stroke();
+            can.closePath();
+            can.beginPath();
+
+            can.font = "120px 宋体";
+            can.strokeText("小花",120,120);
+            can.fillText("小花",220,220);
+
+        }
+    </script>
+</head>
+<body onload="a()">
+<canvas width="500" height="500" id="canvas" style="background: #ccc;">
+    此版本浏览器不支持canvas标签
+</canvas>
+</body>
+</html>

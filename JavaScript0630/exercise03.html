@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function pic(j){
+//            点击使当前图片放大，其他图片恢复原状
+            var img=document.getElementsByTagName("img");
+            for(var i=0;i<img.length;i++){
+                img[i].style.width="128px";
+            }
+            img[j].style.width="180px";
+        }
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" onclick="pic(0)">
+    <img src="img/a02.png" onclick="pic(1)">
+    <img src="img/a03.png" onclick="pic(2)">
+    <img src="img/a04.png" onclick="pic(3)">
+</body>
+</html>

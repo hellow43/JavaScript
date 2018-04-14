@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #sel { width: 100px;}
+
+    </style>
+    <link href="jquery-ui.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#sel").menu();
+        });
+    </script>
+</head>
+<body>
+<ul id="sel">
+    <li class="ccc" style="position: relative;">
+        <a href="#">111111111</a>
+        <ul style="position: absolute; left:0; top:0;" >
+            <li><a href="#">100001</a></li>
+            <li><a href="#">100002</a></li>
+            <li><a href="#">100003</a></li>
+            <li><a href="#">100004</a></li>
+        </ul>
+    </li>
+    <li><a href="#">222222222</a></li>
+    <li><a href="#">333333333</a></li>
+    <li><a href="#">444444444</a></li>
+    <li><a href="#">555555555</a></li>
+    <li><a href="#">666666666</a></li>
+</ul>
+</body>
+</html>

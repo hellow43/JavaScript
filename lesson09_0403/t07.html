@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+//        7.已知一个字符串，判断“你好“出现的次数
+        var str01="你好发发发你嘎嘎嘎你好";
+        var j=0;
+        for(var i=0;i<=str01.length;i++){
+            //i<str01.length-2,如果不写-2，会执行的，并不会报错
+            var s=str01.substring(i,i+2);
+            if(s=="你好"){
+                j++;
+            }
+             }
+//            for (var i=0;i<str01.length;i++){
+//                a=str01.charAt(i);
+//                b=str01.charAt(i+1);
+//                if(a+b=="你好"){
+//                    j++;
+//                }
+//            }
+
+            alert(j);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body{
+            margin: 0;
+        }
+        *{
+            list-style: none;
+            border: none;
+        }
+        .img{
+            margin-left:350px;
+            margin-top:150px;
+        }
+        ul{
+            margin-top:20px;
+            margin-left:300px ;
+        }
+        ul li{
+            height:20px;
+            width:20px;
+            float:left;
+            margin-right:10px;
+            background: black;
+            color:white;
+            text-align: center;
+            line-height: 20px;
+            font-size: 15px;
+            border-radius: 15px;
+        }/*这里不能对#list的样式进行定义，因为ID选择器优先级较高，在function中定义无法执行*/
+        ul li:hover{
+            background: green;
+            cursor: pointer;
+        }
+        .bg{background: #f00;}
+    </style>
+    <script type="text/javascript">
+        function li01(i){
+//            图片轮播，带小圆点
+            var arr=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var img=document.getElementById("img");
+            var list01 = document.getElementById("list");
+            var li = list01.getElementsByTagName("li");
+            img.src=arr[i];
+            for(var j=0;j<li.length;j++){
+//                li[j].style.background="black";
+                li[j].className="";
+            }
+//            li[i].style.background="#f00";
+            li[i].className="bg";
+
+        }
+        var k=0;
+        function t16(){
+            var arr=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var img=document.getElementById("img");
+            var list01 = document.getElementById("list");
+            var li = list01.getElementsByTagName("li");
+            for(var j=0;j<li.length;j++){
+                li[j].className="";
+            }
+            k++;
+            if(k==li.length){
+                k=0;
+            }
+            li[k].className="bg";
+            img.src=arr[k];
+        }
+    </script>
+</head>
+<body>
+<img src="img/a01.png" id="img" class="img">
+<ul id="list">
+    <li onclick="li01(0)" class="bg">1</li>
+    <li onclick="li01(1)">2</li>
+    <li onclick="li01(2)">3</li>
+    <li onclick="li01(3)">4</li>
+    <li onclick="li01(4)">5</li>
+</ul>
+<button onclick="t16()">变换</button>
+</body>
+</html>

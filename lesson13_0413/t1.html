@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //鼠标按下事件
+        function p(id){
+            var psd=document.getElementById(id);
+            psd.type="text";
+        }
+        function p1(id){
+            var psd=document.getElementById(id);
+            psd.type="password";
+        }
+    </script>
+</head>
+<body>
+密码：<input type="password" id="p"><button onmousedown="p('p')" onmouseup="p1('p')">显示密码</button>
+</body>
+</html>

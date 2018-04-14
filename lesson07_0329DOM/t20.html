@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+//        实现复选框的全选，反选，取消功能。
+        function btn01(){
+            var checkbox = document.getElementsByName("checkbox");
+            for(var j=0;j<checkbox.length;j++){
+                checkbox[j].checked=true;
+//                checkbox[j].checked="checked";
+            }//input 标签具有name属性
+//            var checkbox = document.getElementsByTagName("input");
+//            for(var j=0;j<checkbox.length;j++){
+//              checkbox[j].checked="checked";
+//            }
+        }
+        function btn02(){
+            var checkbox = document.getElementsByTagName("input");
+                 for(var j=0;j<checkbox.length;j++) {
+//                     checkbox[j].checked = ""; 两句都可以
+                     checkbox[j].checked = false;
+                 }
+              }
+        function btn03(){
+            var checkbox = document.getElementsByName("checkbox");
+            for(var j=0;j<checkbox.length;j++){
+                if(checkbox[j].checked){
+                    checkbox[j].checked=false;
+                }else{
+                    checkbox[j].checked=true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="checkbox"/>1
+    <input type="checkbox" name="checkbox"/>2
+    <input type="checkbox" name="checkbox"/>3
+    <input type="checkbox" name="checkbox"/>4
+    <input type="checkbox" name="checkbox"/>5
+    <button onclick="btn01()">全选</button>
+    <button onclick="btn02()">取消</button>
+    <button onclick="btn03()">反选</button>
+</body>
+</html>

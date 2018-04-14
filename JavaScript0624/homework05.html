@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #list { height: 20px; width:300px;        }
+        #list li{width:20px; border:solid 1px black;border-radius: 10px;background:black;
+            color:white; margin:0 10px;  text-align: center; float:left;}
+       .bg {width:20px; border:solid 1px black;border-radius: 10px;background:white!important;
+            color:black !important; margin:0 10px;  text-align: center; float:left; list-style: none; cursor: pointer; }
+    </style>
+    <script>
+    var i=0;
+        function change(){
+            var src=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var list=document.getElementById("list");
+            var li=list.getElementsByTagName("li");
+            var al=document.getElementById("img") ;
+            for(var j=0;j<li.length;j++){
+                li[j].className="";
+            }
+
+
+            i++;
+
+          if(i>=src.length){
+               i=0;
+           }
+            al.src=src[i];
+            li[i].className="bg";
+
+        }
+    </script>
+</head>
+<body>
+        <img src="img/a01.png" id="img" >
+        <ul id="list">
+            <li class="bg" >1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <button  onclick="change()">连续变换</button>
+</body>
+</html>

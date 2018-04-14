@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+        function html01(){
+            $("div").html("ahhah<br />ahah");//html（）括号中为空表示获取内容，当有值时，表示设置显示内容,并且标签可以正常显示
+        }
+        function text01(){
+            $("div").text("ahhah<br />ahah");
+        }
+        function val01(){
+            $("input").val("ahhah<br />ahah");
+        }
+
+    </script>
+</head>
+<body>
+<div>hhhhhhh</div>
+<input type="text">
+<button onclick="html01()">html</button>
+<button onclick="text01()">text</button>
+<button onclick="val01()">val</button>
+</body>
+</html>

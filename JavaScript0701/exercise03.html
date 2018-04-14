@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{list-style: none; margin:0; border:none;}
+       #banner{width:200px;height:200px; margin:0 auto; position:relative; }
+       #banner #img{width:200px;height:200px; margin:0 auto; position:relative;}
+        #banner #lbtn{position: absolute; left:0; width:20px; height:40px;
+            padding-top:80px; backgroung:yellow; cursor: pointer;}
+        #banner #rbtn{position: absolute; right:0; width:20px; height:40px;
+            top:50px; backgroung:yellow; cursor: pointer;}
+        #list{width:50px; height:20px; }
+
+    </style>
+    <script type="text/javascript">
+        var src=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+        var i=0;
+        function a01(){
+            var img=document.getElementById("img");
+
+            if(i==0){
+                i=img.length-1;
+                img.src=src[i];
+            }
+            i--;
+            img.src=src[i];
+        }
+        function a02(){
+            var img=document.getElementById("img");
+            i++;
+
+            if(i>=src.length){
+                i=0;
+            }
+            al.src=src[i];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="banner">
+        <img src="img/a01.png" id="img">
+
+        <a id="lbtn" href="javascript:void(0)" onclick="a01()">&lt;</a>
+        <a id="rbtn" href="javascript:void(0) " onclick="a02()">&gt;</a>
+        <ul id="list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

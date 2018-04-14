@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+//        21.做一个计算器，下拉框选择加减乘除操作，点击按钮计算结果。
+        function t21(){
+            var num01=document.getElementById("num01");
+            var num02=document.getElementById("num02");
+            var num03=document.getElementById("num03");
+            var acc=document.getElementById("acc");
+            switch(acc.value){
+                case "+":
+                    num03.value=Number(num01.value)+Number(num02.value);
+                    break;
+                case "-":
+                    num03.value=Number(num01.value)-Number(num02.value);
+                    break;
+                case "*":
+                    num03.value=Number(num01.value)*Number(num02.value);
+                    break;
+                case "/":
+                    num03.value=Number(num01.value)/Number(num02.value);
+                    break;
+                case "%":
+                    num03.value=Number(num01.value)%Number(num02.value);
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="num01">
+    <select id="acc">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="num02">
+    <button onclick="t21()">=</button>
+    <input type="text" id="num03">
+</body>
+</html>

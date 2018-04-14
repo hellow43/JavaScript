@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        3.邮箱检测
+        function jc02(){
+            var mail=document.getElementById("mail");
+            var reg=/[\w]+[@][a-zA-Z0-9]+(.com|.cn)$/;
+            if(reg.test(mail.value)){
+                span.innerHTML="输入符合要求";
+            }else{
+                span.innerHTML="输入不符合要求";
+            }
+            mail.onfocus=function(){
+                span.innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+请输入邮箱：<input type="text" id="mail">
+<button onclick="jc02()">检测</button>
+<span id="span"></span>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        7.已知一个数组，统计有多少个数小于60.
+            var arr=[];
+            var sum=0;
+            function s01(){
+                var a=document.getElementById("str01").value;
+                var a01= a.split("#");
+                for(var i=0;i<a01.length;i++){
+                    arr[i]=a01[i];
+                }
+                for(var i=0;i<arr.length;i++){
+                   if(arr[i]<60){
+                       sum++;
+                   }
+                }
+                alert("小于60的数共有"+sum);
+            }
+    </script>
+</head>
+<body>
+    请输入数组元素，用“#”分割： <input type="text" id="str01">
+    <button onclick="s01()">最大字符</button>
+</body>
+</html>

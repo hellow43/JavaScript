@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * { padding: 0; margin:0; border: none; list-style: none;}
+        #banner { width: 395px; height: 225px; margin: auto; position: relative;}
+        #list { position: absolute; bottom:10px; left:50%; margin-left: -60px; font-size: 12px; color: #fff; width: 120px; height: 20px;}
+        #list li { cursor: pointer; text-align: center; line-height: 14px; width: 14px; height: 14px; background: #000; margin-right: 8px; float:left; border-radius: 7px;}
+        #list li:hover { background: red;}
+        #list .bg { background: red;}
+        #lBtn { left:0;}
+        #rBtn { right:0;}
+        #lBtn,#rBtn { display: none; text-align: center; line-height: 50px; color:#fff; width: 30px; height: 50px; background: rgba(0,0,0,.3); position: absolute; top:50%; margin-top:-25px;}
+        #lBtn:hover,#rBtn:hover { background: rgba(0,0,0,.6);}
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        var bannerSrc = ["a.jpg","b.jpg","c.jpg","d.jpg","e.jpg"];
+        var i = 0;
+        var h = null;
+        function oPic(){
+            i++;
+            if(i >= bannerSrc.length){
+                i = 0;
+            }
+            $("#img").attr("src",bannerSrc[i]);
+            bannerIcon();
+        }
+        h = setInterval("oPic()",2000);
+        function oPic1(cur){
+            i = cur;
+            $("#img").attr("src",bannerSrc[cur]);
+            bannerIcon();
+        }
+        function bannerIcon(){
+            $("#list li").removeClass("bg");
+            $("#list li:eq("+i+")").addClass("bg");
+        }
+        $(function(){
+            $("#banner").mousemove(function(){
+                clearInterval(h);
+                $("#lBtn").css("display","block");
+                $("#rBtn").css("display","block");
+            });
+            $("#banner").mouseout(function(){
+                h = setInterval("oPic()",2000);
+                $("#lBtn").css("display","none");
+                $("#rBtn").css("display","none");
+            });
+        });
+        function leftBtn(){
+            clearInterval(h);
+            i == 0 ? i = bannerSrc.length - 1 : i--;
+            $("#img").attr("src",bannerSrc[i]);
+            bannerIcon();
+        }
+        function rightBtn(){
+            clearInterval(h);
+            i == bannerSrc.length -1 ? i = 0 : i++;
+            $("#img").attr("src",bannerSrc[i]);
+            bannerIcon();
+        }
+        function m(){
+            clearInterval(h);
+            $("#lBtn").css("display","block");
+            $("#rBtn").css("display","block");
+        }
+    </script>
+</head>
+<body>
+<div id="banner">
+    <img src="a.jpg" id="img">
+    <ul id="list">
+        <li onclick="oPic1(0)" class="bg">1</li>
+        <li onclick="oPic1(1)">2</li>
+        <li onclick="oPic1(2)">3</li>
+        <li onclick="oPic1(3)">4</li>
+        <li onclick="oPic1(4)">5</li>
+    </ul>
+    <a href="javascript:void(0)" onmousemove="m()" onclick="leftBtn()" id="lBtn">&lt;</a>
+    <a href="javascript:void(0)" onmousemove="m()" id="rBtn" onclick="rightBtn()">&gt;</a>
+</div>
+</body>
+</html>

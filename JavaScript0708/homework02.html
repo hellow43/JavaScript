@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var i=0;
+        function count(){
+            var a=document.getElementById("a");
+
+            for(i=0; i<5;i++){
+                a.value=Number(a.value)+Number("00:01");
+            }
+        }
+        function start(){
+            setInterval("count()",100);
+        }
+
+    </script>
+</head>
+<body>
+    <input type="time" id="a" style="width:200px; " value="00:00">
+    <button>start</button>
+    <button>parse</button>
+    <button>reset</button>
+    <button>continue</button>
+</body>
+</html>

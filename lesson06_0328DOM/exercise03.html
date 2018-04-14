@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function width01(i){
+//            点击使当前图片放大，其他图片恢复原状
+            var img = document.getElementsByTagName("img");
+            for(var j=0;j<img.length;j++){
+                img[j].style.width="";//width值等于空字符串，即为默认大小
+            }
+            img[i].style.width="200px";
+        }
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" onclick="width01(0)">
+    <img src="img/a02.png" onclick="width01(1)">
+    <img src="img/a03.png" onclick="width01(2)">
+    <img src="img/a04.png" onclick="width01(3)">
+    <img src="img/a05.png" onclick="width01(4)">
+</body>
+</html>

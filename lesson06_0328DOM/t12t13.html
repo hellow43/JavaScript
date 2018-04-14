@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .box{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+        .box01{
+            width:200px;
+            height:200px;
+            border: 3px solid #ccc;
+            background:pink ;
+            transition: 3s;
+        }
+    </style>
+    <script type="text/javascript">
+        function t12(){
+//            点击一个按钮，div变大，加边框
+            var box = document.getElementById("box");
+            box.className="box01";
+        }
+        var flag=false;//?为什么写在方法里就不好使了？
+        function t13(){
+//            点击图片，切换成另一张图片，再点，变回原图片。
+            var img = document.getElementById("img");
+
+            if(flag){
+                img.src="img/a01.png";
+                flag=false;
+            }else{
+                img.src="img/a02.png";
+                flag=true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <!--<div id="box" width="100" height="100" style="border: 1px solid #cccccc;" ></div>-->
+    <div id="box" class="box"></div>
+    <img src="img/a01.png" id="img">
+    <button onclick="t12()">变大</button>
+    <button onclick="t13()">变图</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        4.中文名检测
+        function jc02(){
+            var name=document.getElementById("name");
+            var reg=/^[\u4e00-\u9fa5][\u4e00-\u9fa5]{1,3}$/;
+            if(reg.test(name.value)){
+                span.innerHTML="输入符合要求";
+            }else{
+                span.innerHTML="输入不符合要求";
+            }
+            mail.onfocus=function(){
+                span.innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+请输入中文名：<input type="text" id="name">
+<button onclick="jc02()">检测</button>
+<span id="span"></span>
+</body>
+</html>

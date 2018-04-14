@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var flag=false;
+        function m02(){//添加onmousedown（）原因:如果不添加，会一直跟随鼠标移动
+            flag=true;
+        }
+        function m03(){
+            flag=false;
+        }
+        function m1(e){//匿名函数,使用匿名函数原因：鼠标移动过快的时候，会移动至div之外，使用document.XXX可以使整个页面都具有onmousemove属性
+            document.onmousemove=function(){
+                var box=document.getElementById("box");
+                var x= e.clientX;
+                var y= e.clientY;
+                if(flag){
+                    box.style.left=x-50+5+"px";//减50的原因：使鼠标坐标始终指向div的中心，从而可以达到向上和向右的效果
+                    box.style.top=y-50+5+"px";
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div onmousemove="m1(event)"  onmousedown="m02()" onmouseup="m03()" id="box" style="position:absolute; width:100px; height:100px; background: green;"></div>
+</body>
+</html>

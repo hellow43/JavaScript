@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            list-style: none;
+            border: none;
+        }
+        #box{
+            margin-top:100px ;
+            margin-left:20px;
+        }
+        #box img{
+            border:1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+//        5张图片自动切换大小
+        var j=0;
+        function pic(){
+            var img=document.getElementById("box").getElementsByTagName("img");
+            if(j==img.length){
+                j=0;
+            }
+            for(var i=0;i<img.length;i++){
+                img[i].style.width="";
+            }
+            img[j].style.width=200+"px";
+            j++;
+        }
+        setInterval(pic,1000);
+    </script>
+</head>
+<body>
+<div id="box">
+    <img src="img/a01.png" alt=""/>
+    <img src="img/a02.png" alt=""/>
+    <img src="img/a03.png" alt=""/>
+    <img src="img/a04.png" alt=""/>
+    <img src="img/a05.png" alt=""/>
+</div>
+</body>
+</html>

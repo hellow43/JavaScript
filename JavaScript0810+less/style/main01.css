@@ -1,0 +1,17 @@
+#header02 {
+  font-size: 5px;
+}
+#header02 h1 {
+  font-size: 15px;
+  backgroud: pink;
+}
+#header02 p {
+  font-size: 5px;
+  background: red;
+}
+#header01 {
+  width: 100px;
+  height: 100px;
+  background: greenyellow;
+  border: 3px solid blue;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var i=0;
+        function a01(){
+            var box01=document.getElementById("box01");
+            var box02=document.getElementById("box02");
+            var span=document.getElementById("span");
+            i+=1;
+            span.innerHTML=i;
+
+        }
+    </script>
+</head>
+<body>
+    <div id="title" style="width: 100%; text-align: center;">留言板<br>
+        <span style="float: right; font-size: 12px; ">当前共有（<span id="span"></span>）楼</span><br><hr></div>
+    <div id="box02">
+        <img style="border: 1px solid black; width: 100px;">
+    </div>
+    <div id="box01" style="position: relative;">
+        <div style="position: absolute;left:28px;top:0; " >
+        <span style="float: left;"><span>选择头像：</span>&nbsp;&nbsp;&nbsp;
+            <ul id="list" style="list-style: none;   " >
+                    <li style="margin-top:-40px;margin-left:50px; padding-right:5px; float: left ;"><img style="height:25px; border:1px solid black;" src="a01.png"></li>
+                    <li style="margin-top:-40px;margin-left:80px; padding-right:5px; float: left ;"><img style="height: 25px;  border:1px solid black;"src="a02.png"></li>
+                    <li style="margin-top:-40px;margin-left:110px; float: left ; "><img style="height: 25px; border:1px solid black; "src="a03.png"></li>
+                  </ul>
+            </span>
+        </div>
+        <br>
+        <span style="position: absolute;left:28px; top:40px; ">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：&nbsp;&nbsp;<input id="nsme"type="text"></span>
+        <textarea id="ta" style="position: absolute;left:28px;top:80px;width: 800px; height:150px;  " >请输入留言内容</textarea>
+        <button style="position: absolute;left:28px; top:315px; " onclick="a01()" >回复</button>
+        <button style="position: absolute;left:80px; top:315px; " onclick="a02()">重置</button>
+    </div>
+
+</body>
+</html>

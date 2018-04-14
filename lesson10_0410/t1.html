@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function t1(){
+            var box=document.getElementById("box");
+            var date=new Date();
+            var year=date.getFullYear();
+            var month=date.getMonth()+1;
+            var day=date.getDate();
+            var hours=date.getHours();
+            var week=date.getDay();
+            box.innerHTML=year+"年"+month+"月"+day+"日"+w(week)+"周"+hours+"时";
+        }
+        function w(w){
+            switch (w){
+                case 0:
+                    return "日";
+                    break;
+                case 1:
+                    return "一";
+                break;
+                case 2:
+                    return "二";
+                break;
+                case 3:
+                    return "三";
+                break;
+                case 4:
+                    return "四";
+                break;
+                case 5:
+                    return "五";
+                break;
+                case 6:
+                    return "六";
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box" style="width: 300px; height: 30px; border: 1px solid #ccc;"></div>
+    <input value="显示时间" type="button" onclick="t1()">
+</body>
+</html>

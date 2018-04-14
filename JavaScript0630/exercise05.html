@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{margin:300px;}
+    </style>
+    <script>
+        function border01(k){
+//            函数名不能用border,会冲突导致不可用
+            var img=document.getElementsByTagName("img");
+            for(var i=0;i<img.length;i++){
+                img[i].style.border="none";
+            }
+            img[k].style.border="5px solid black";
+        }
+
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" onclick="border01(0)">
+    <img src="img/a02.png" onclick="border01(1)">
+    <img src="img/a03.png" onclick="border01(2)">
+    <img src="img/a04.png" onclick="border01(3)">
+
+</body>
+</html>

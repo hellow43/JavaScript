@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var tag=false;
+        function change(){
+            //点击按钮，变换图片，不能用if语句判断路径来来进行变换
+
+            var a1=document.getElementById("al");
+            if(tag){
+                al.src="img/a.png";
+                tag=false;
+            }else{
+                al.src="img/b.png";
+                tag=true;
+            }
+
+        }
+
+
+        function bigDiv(){
+            var div01=document.getElementById("div");
+            div01.style.width="100px";
+            div01.style.height="200px";
+            div01.style.border="1px solid black";
+
+        }
+
+//        function sr(){  不能用这个方法判断，如果要判断，src
+//            var sr01=document.getElementById("al");
+//            if(al.src=="../img/a.png"){
+//                al.src="../img/b.png";
+//            }
+//            if(al.src=="../img/b.png"){
+//                al.src="../img/a.png";
+//            }
+//        }
+        var i=0;
+        function right(){
+            var right01 =document.getElementById("div");
+            right01.style.marginLeft=i+"px";
+            i+=100;
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <img src="img/a.png"  id="al" >
+    <div style="width:50px; height:50px; background: yellow; position: relative;" id="div"></div>
+    <button onclick="bigDiv()">变大</button>
+    <button onclick="change( )">切换 </button>
+    <button onclick="right()">右移</button>
+</body>
+</html>

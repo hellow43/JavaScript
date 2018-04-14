@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            list-style: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin-top: 100px;
+            margin-left: 400px;
+        }
+        ul{
+            width:500px;
+            height:29px;
+            border-top:1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+        ul li{
+            float: left;
+            width:99px;
+            border-right: 1px solid #ccc;
+            border-bottom:1px solid #ccc ;
+            text-align: center;
+            line-height: 30px;
+        }
+        .box div{
+            width: 499px;
+            height:200px;
+            border: 1px solid #ccc;
+            border-top:none;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function t17(i,id){
+            var box=document.getElementById("box"+id);
+            var list=document.getElementById("list"+id)
+            var li01=list.getElementsByTagName("li");
+            var div01=box.getElementsByTagName("div");
+            for(var j=0;j<div01.length;j++){
+                li01[j].style.borderBottom="1px solid #ccc";
+                div01[j].style.display="";
+            }
+            li01[i].style.borderBottom="none";
+            div01[i].style.display="block";
+        }
+    </script>
+</head>
+<body>
+    <ul id="list1">
+        <li onclick="t17(0,1)" style="border-bottom:none">1</li>
+        <li onclick="t17(1,1)">2</li>
+        <li onclick="t17(2,1)">3</li>
+        <li onclick="t17(3,1)">4</li>
+        <li onclick="t17(4,1)">5</li>
+    </ul>
+    <div id="box1" class="box">
+        <div style="display: block">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div style="clear:both;">5</div> <!--清除两边浮动-->
+    </div>
+    <ul id="list2">
+        <li onclick="t17(0,2)" style="border-bottom:none">1</li>
+        <li onclick="t17(1,2)">2</li>
+        <li onclick="t17(2,2)">3</li>
+        <li onclick="t17(3,2)">4</li>
+        <li onclick="t17(4,2)">5</li>
+    </ul>
+    <div id="box2" class="box">
+        <div style="display: block">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div style="clear:both;">5</div> <!--清除两边浮动-->
+    </div>
+    <ul id="list3">
+        <li onclick="t17(0,3)" style="border-bottom:none">1</li>
+        <li onclick="t17(1,3)">2</li>
+        <li onclick="t17(2,3)">3</li>
+        <li onclick="t17(3,3)">4</li>
+        <li onclick="t17(4,3)">5</li>
+    </ul>
+    <div id="box3" class="box">
+        <div style="display: block">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div style="clear:both;">5</div> <!--清除两边浮动-->
+    </div>
+</body>
+</html>

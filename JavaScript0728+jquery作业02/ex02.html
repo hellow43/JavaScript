@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{float:left; border:1px solid black;}
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        var src=[
+                ["a01.png","a01.png","a01.png","a01.png","a01.png"],
+                ["a02.png","a01.png","a02.png","a01.png","a03.png"],
+                ["a03.png","a04.png","a03.png","a01.png","a03.png"],
+                ["a04.png","a05.png","a01.png","a01.png","a01.png"],
+                ["a05.png","a05.png","a03.png","a01.png","a01.png"]
+        ];//二维数组
+        var i=0;
+        function change(){
+            i++;
+            if(i>=src.length){
+                i=0;
+            }
+            var img=$("div img");
+            for(var j=0;j<img.length;j++){
+                img[j].src=src[i][j];
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <img src="a01.png">
+    <img src="a01.png">
+    <img src="a01.png">
+    <img src="a01.png">
+    <img src="a01.png">
+</div>
+<button onclick="change()">change</button>
+</body>
+</html>

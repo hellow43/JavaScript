@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+        function change(){
+            $("ul li:even").css("background","yellow");
+            //由于下标从0开始，故选取even（偶数），为选取下标为偶数的，即为选取奇数
+            //由于下标从0开始，故选取odd（奇数），为选取下标为奇数的，即为选取偶数
+            $("ul li:eq(3)").css("font-size","20px");//下标从0开始
+            $("ul li:gt(3)").css("color","red");//大于3但不包括3，lt(小于)
+
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>11111111111111</li>
+        <li>11111111111111</li>
+        <li>11111111111111</li>
+        <li>11111111111111</li>
+        <li>11111111111111</li>
+        <li>11111111111111</li>
+        <li>11111111111111</li>
+    </ul>
+<button onclick="change()">change</button>
+</body>
+</html>

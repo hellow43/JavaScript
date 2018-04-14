@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+//        图片闪烁（大小切换）
+        var i=0;
+        function change(){
+            $("img").css("width",128+"px");
+            $("img:eq("+i+")").css("width",200+"px");
+            i++;
+            if(i==$("img").length){
+                i=0;
+            }
+        }
+
+        setInterval("change()",100);
+    </script>
+</head>
+<body >
+    <img src="a01.png">
+    <img src="a01.png">
+    <img src="a01.png">
+    <img src="a01.png">
+    <img src="a01.png">
+</body>
+</html>

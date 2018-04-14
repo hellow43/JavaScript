@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+//        1.包含id属性的元素
+        function change(){
+            $("input[size]").css("background","red");
+            $("input[type='text']").css("width","100px");
+            $("input[id^='b']").css("border","5px solid yellow");
+            $("input[id$='2']").css("border","5px solid black");
+            $("input[id*='4']").css("border","5px solid blue");
+        }
+    </script>
+</head>
+<body>
+    <input type="text" size="3">
+    <input type="text" id="box1">
+    <input type="text"  id="a2">
+    <input type="text"  id="c4">
+    <input type="text"  id="d4">
+    <input type="password"  id="box3">
+<button onclick="change()">change</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+        function oPic(){
+            $("img").attr("src","a05.png");
+            $("#img01").attr("width","200");
+            $(".img02:first").attr("width","70");
+        }
+    </script>
+</head>
+<body>
+    <img src="a02.png" id="img01">
+    <img src="a03.png" class="img02">
+    <img src="a04.png" class="img02">
+    <img src="a01.png">
+    <img src="a02.png">
+    <img src="a03.png">
+    <img src="a04.png">
+    <img src="a05.png">
+    <button onclick="oPic()">change</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //左移右移，使用延时函数
+        var i=0;
+        var h1;
+        function oPic(){
+            var img=document.getElementById("a");
+            img.style.left=i+"px";
+            i+=10;
+        }
+        function q(){
+            clearInterval(h1);
+            h1=setInterval("oPic()",100);
+        }
+        function clear01(){
+            clearInterval(h1);
+        }
+        function back(){
+            var img=document.getElementById("a");
+            img.style.left=i+"px";
+            i-=10;
+        }
+        function back01(){
+            clearInterval(h1);
+            h1=setInterval("back()",100);
+        }
+
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" id="a" style="position: absolute; left: 100px;  ">
+    <button onclick="q()">left</button>
+    <button onclick="clear01()">stop</button>
+    <button onclick="back01()">back</button>
+
+</body>
+</html>

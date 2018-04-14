@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .div01{width: 100px; height:200px;}
+        .div{width:400px;height:200px; background: yellow ; border:1px solid #ccc; transition: 3s; }
+    </style>
+    <script type="text/javascript">
+        function pic(){
+            var div01 = document.getElementById("div01");
+            div01.className="div";
+//            div01.style.width="400px";
+//            div01.style.height="200px";
+//            div01.style.background="url('img/a01.png') ";
+//            div01.style.transition= 5+"s";  transition写在style下的css里有时候会不好用
+        }
+    </script>
+</head>
+<body>
+    <div id="div01" class="div01" ></div>
+    <!--div没有width,height属性，所以定义div的大小只能在style里面-->
+    <input type="button" value="change" onclick="pic()">
+</body>
+</html>

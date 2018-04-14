@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //setInterval()函数
+        var i= 0;
+        function g(){
+            var arr=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var img =document.getElementById("a");
+
+            i++;
+            if(i==arr.length){
+                i=0;
+            }
+            img.src=arr[i];
+
+        }
+//        setTimeout("g()",1000);
+//        var h=setInterval("g()",1000);//写在函数外面
+        function s(){
+            clearInterval(h);
+        }
+        setTimeout("g()",1000);
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" id="a"  onclick="g()">
+    <button onclick="s()">stop</button>
+
+</body>
+</html>

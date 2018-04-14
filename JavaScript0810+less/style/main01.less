@@ -1,0 +1,32 @@
+@a01:salmon;
+@a:100px;
+@size:10px;
+
+.bg(@c)when(@c>10){
+    background:@a01;
+}
+.bg(@c,@d)when(@c>10)and(@d<5){
+  background:yellow;
+}
+.bg1(@c)when not(@c=10){
+  background:greenyellow;
+}
+.bg2(@c,@d)when(@c>10),(@d<5){
+  background:yellow;
+}
+#header02{
+  @size:5px;
+  font-size: @size;
+  h1{
+    @size:15px;
+    font-size:@size;
+    backgroud:pink;
+  }
+  p{
+    font-size:@size;
+    background:red;
+  }
+}
+
+#header01{width:@a; height:@a; .bg1(12) ; border:3px solid blue;}
+

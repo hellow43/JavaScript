@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{margin:0 auto;  position: relative;}
+        #img {margin-left:560px; margin-top:100px;}
+       #list {margin-left:525px; margin-top:50px;  color: white;  }
+        #list li{border-radius: 20px;line-height:20px; text-align: center;  margin-left:3px; width:20px;height:20px;   background-color: black; float: left; list-style: none;}
+        .bg{background: red!important;}
+        #list li:hover{background:red;}
+        #lbtn{display: none; position: absolute; left:560px; top:150px; width:20px; height:30px; background: rgba(0,0,1,.3); }
+        #rbtn{display: none; position: absolute; left:660px; top:150px; width:20px; height:30px; background: rgba(0,0,1,.3); }
+        #lbtn:hover,#rbtn:hover{background: rgba(0,0,1,.9);}
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+//        图片轮播
+        var  src01=["a01.png","a02.png","a03.png","a04.png","a05.png"];
+        var i=0;
+        var h=null;
+        function oPic(){
+            i++;
+            if(i==5){
+                i=0;
+            }
+            $("#box img").attr("src",src01[i]);
+            icon01();
+        }
+        h=setInterval("oPic()",1000);
+        function icon01(){
+            $("#list li").removeClass("bg");
+            $("#list li:eq("+i+")").addClass("bg");
+        }
+        function oPic01(obj){
+            i=obj;
+            $("#box img").attr("src",src01[i]);
+            icon01();
+        }
+        $(function(){
+            $("#img").mousemove(function(){
+                clearInterval(h);
+                $("#lbtn,#rbtn").css("display","block");
+            });
+            $("#img").mouseout(function(){
+                clearInterval(h);
+                $("#lbtn,#rbtn").css("display","none");
+                h=setInterval("oPic()",1000);
+            });
+        });
+        function lbtn(){
+            if(i==0){
+                i=src01.length-1;
+            }else{i--;}
+            //i==0?i=src01.length-1:i--
+            $("#box img").attr("src",src01[i]);
+            icon01();
+        }
+        function rbtn(){
+            i==src01.length-1?i=0:i++;
+
+            $("#box img").attr("src",src01[i]);
+            icon01();
+        }
+        function m(){
+            clearInterval(h);
+            $("#lbtn,#rbtn").css("display","block");
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="a01.png" id="img">
+        <ul id="list">
+        <li class="bg" onclick="oPic01(0)">1</li>
+        <li onclick="oPic01(1)">2</li>
+        <li onclick="oPic01(2)">3</li>
+        <li onclick="oPic01(3)">4</li>
+        <li onclick="oPic01(4)">5</li>
+        </ul>
+        <a href="javascript:void(0)" onmousemove="m()" onclick="lbtn()" id="lbtn">&lt;</a>
+        <a href="javascript:void(0)" onmousemove="m()" onclick="rbtn()" id="rbtn">&gt;</a>
+    </div>
+
+</body>
+</html>

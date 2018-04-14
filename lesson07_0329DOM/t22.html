@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #box{
+            margin-left:475px;
+            margin-top:200px;
+            position: relative;
+        }
+        #img{
+            border: 1px solid black;
+        }
+        .btnleft{
+            height: 128px;
+            position: absolute;
+            top:0px;
+            left:-30px;
+            line-height: 128px;
+            cursor: pointer;
+        }
+        .btnright{
+            height: 128px;
+            position: absolute;
+            top:0px;
+            left:138px;
+            line-height: 128px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+//        点击左右箭头切换图片
+        var i=0;
+        var arr=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+        function left(){
+            var img=document.getElementById("img");
+            i--;
+            if(i<0){
+                i=arr.length-1;
+            }
+            img.src=arr[i];
+        }
+
+        function right(){
+            var img= document.getElementById("img");
+            i++;
+            if(i==arr.length){
+                i=0;
+            }
+            img.src=arr[i];
+
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <div class="btnleft" onclick="left()">&lt;</div>
+    <img src="img/a01.png" id="img">
+    <div class="btnright" onclick="right()">&gt;</div>
+</div>
+</body>
+</html>

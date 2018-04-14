@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+    <input type="text" id="val">
+</body>
+<script>//放在下面，可以在文本框里显示或者将script内容编写为一个函数
+    var date=new Date();
+    var year=date.getFullYear();//得到年份
+    //        var s=date.getYear();//有的浏览器不支持这个方法，得到的是100多的数
+    //        alert(s);//取年份用getfullyear（）；
+    //        alert(year);
+    var m=date.getMonth()+1;//从0开始计算，所以月份得+1
+    //        alert(m);
+    var s=date.getDate();//月中的某一天
+    var s01=date.getDay();//周中的某一天
+    var val=document.getElementById("val");
+    val.value=year+"年"+m+"月"+s+"日"+"星期"+s01;
+    //        alert(s);
+    //        alert(s01);
+
+</script>
+</html>

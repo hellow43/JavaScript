@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //^a 以a开头 $a以a结束
+        var s='ahc';
+        var s01="aaac";
+        var reg=/^a.c$/;//以a开头,以c结束,中间是任意一个字符
+        var reg01=/^a[hjk]c$/;//[]：匹配出现过的一个字符
+        var reg02=/^a(aa|bb|cc)c$/;//（）：匹配出现的一个字符串
+        var t01= reg.test(s);
+        console.log(t01);
+        var t02=reg01.test(s);
+        console.log(t02);
+        var t03=reg02.test(s01);
+        console.log(t03);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function cal01(){
+            var v01=document.getElementById("add01");
+            var v02=document.getElementById("add02");
+            var v03=document.getElementById("add03");
+            var v04=document.getElementById("sel");
+            if(v04.value=="+"){
+                v03.value=Number(v01.value)+ Number(v02.value);//需进行强制转换，否则是string类型
+            }
+            if(v04.value=="-"){
+                v03.value=v01.value-v02.value;
+            }
+            if(v04.value=="*"){
+                v03.value=v01.value*v02.value;
+            }
+            if(v04.value=="/"){
+                v03.value=v01.value/v02.value;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <input type="text" id="add01" size="6">
+
+    <select id="sel" >
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="add02" size="6">
+    <button onclick="cal01()">=</button>
+    <input type="text" id="add03" size="8">
+</body>
+</html>

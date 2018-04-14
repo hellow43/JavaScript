@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+//        5.制作隔行变色效果，可以通过按钮进行切换，如下图。
+        var a;
+        function yellow(){
+            var odd01=document.getElementById("odd01");
+            var odd02=document.getElementById("odd02");
+            odd01.onclick=function(){
+                a=true;
+            }
+            odd02.onclick=function(){
+                a=false;
+            }
+            if(a){
+                $("ul li").css("background","none");
+                $("ul li:even").css("background","yellow");
+            }else{
+                $("ul li").css("background","none");
+                $("ul li:odd").css("background","yellow");
+            }
+        }
+            function green(){
+                var odd01=document.getElementById("odd01");
+                var odd02=document.getElementById("odd02");
+                odd01.onclick=function(){
+                    a=true;
+                }
+                odd02.onclick=function(){
+                    a=false;
+                }
+                if(a){
+                    $("ul li").css("background","none");
+                    $("ul li:even").css("background","green");
+                }else{
+                    $("ul li").css("background","none");
+                    $("ul li:odd").css("background","green");
+                }
+            }
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+    </ul><br>
+    <button onclick="yellow()">黄色</button>
+    <button onclick="green()">绿色</button>
+    <button id="odd01" >奇数</button>
+    <button id="odd02" >偶数</button>
+</body>
+</html>

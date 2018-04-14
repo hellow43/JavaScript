@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        var i=0;
+        var h;
+        function pic(){
+            var img=document.getElementById("img");
+            i++;
+            img.style.marginLeft=i+"px";
+        }
+        function pic0(){
+            var img=document.getElementById("img");
+            i--;
+            img.style.marginLeft=i+"px";
+        }
+        function pic1(){
+            clearInterval(h);
+            h=setInterval("pic()",10);
+        }
+        function pic2(){
+            clearInterval(h);
+        }
+        function pic3(){
+            clearInterval(h);
+            h=setInterval("pic0()",10);
+        }
+    </script>
+</head>
+<body>
+ <img id="img" src="a.png">
+ <br>
+ <input type="button" value="前进" onclick="pic1()">
+ <input type="button" value="停止" onclick="pic2()">
+ <input type="button" value="后退" onclick="pic3()">
+</body>
+</html>

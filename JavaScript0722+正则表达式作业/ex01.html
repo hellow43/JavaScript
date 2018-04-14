@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //        1.用户名检测，一共8-12位，允许数字，字母，下划线，开头必须是字母。
+        function zc01(){
+            var uname=document.getElementById("uname");
+            var span=document.getElementById("span");
+//              var reg=/^[a-zA-Z][0-9a-zA-Z_]{7,11}/;
+            var reg01=/^[a-zA-Z][\w]{7,11}$/;//\w:  查找字母数字下划线[a-zA-Z0-9_];
+            var reg02=/^[a-zA-Z]/;
+            if(reg02.test(uname.value)){
+                if(reg01.test(uname.value)){
+                    if(uname.value.length>=8&uname.value.length<=12){
+                        span.innerHTML="输入合法";
+                    }else{
+                        span.innerHTML="一共8-12位";
+                    }
+                }else{
+                    span.innerHTML="数字，字母，下划线";
+                }
+            }else{
+                span.innerHTML="开头必须是字母";
+            }
+
+        }
+    </script>
+</head>
+<body>
+请输入用户名：<input type="text" id="uname" onkeyup="zc01()">
+<button >注册</button><span id="span"></span>
+</body>
+</html>

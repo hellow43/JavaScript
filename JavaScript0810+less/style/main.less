@@ -1,0 +1,16 @@
+@a:100px;
+@red:yellow;
+#header{width:@a; height:@a; background:@red; border-radius:@a/2;}
+#header1{width:@a; height:@a; .b01()}
+#header2{width:@a; height:@a; .b02(#f00)}
+#header3{width:@a; height:@a; .b03(#f0f)}//即传参数，又赋值，会执行所传的参数
+
+.b01(){
+  border:1px solid #00f;
+}
+.b02(@c){
+  border: 1px solid @c;
+}
+.b03(@c:#0f0){
+  border:1px solid @c ;
+}

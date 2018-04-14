@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{margin:100px; }
+        #list{width:400px; height:20px; border-right :1px solid black; }
+        #list li{width:99px; height:20px; border-top:1px solid black;
+            border-left :1px solid black; list-style: none;float:left;}
+        #box{border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; width:398px;
+        height:200px; }
+
+    </style>
+    <script>
+        function checkmenu(i){
+            var list=document.getElementById("list");
+            var li=list.getElementsByTagName("li");
+            var box=document.getElementById("box");
+            var div=box.getElementsByTagName("div");
+
+            for(var j=0;j<li.length;j++){
+                li[j].style.borderBottom="1px solid black";
+                div[j].style.display="none";
+
+            }
+            li[j].style.borderBottom="none";
+            div[j].style.display="block";
+        }
+    </script>
+</head>
+<body>
+    <ul id="list">
+        <li onclick="checkmenu(0)">1</li>
+        <li onclick="checkmenu(1)">2</li>
+        <li onclick="checkmenu(2)">3</li>
+        <li onclick="checkmenu(3)">4</li>
+    </ul>
+    <div id="box">
+        <div onclick="checkmenu(0)">1</div>
+        <div onclick="checkmenu(1)">2</div>
+        <div onclick="checkmenu(2)">3</div>
+        <div onclick="checkmenu(3)">4</div>
+    </div>
+
+</body>
+</html>

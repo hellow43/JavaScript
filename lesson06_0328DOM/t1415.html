@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<style type="text/css">-->
+        <!--/*.box{*/-->
+            <!--/*width: 100px;*/-->
+            <!--/*height: 100px;*/-->
+            <!--/*background: yellow;*/-->
+        <!--/*}*/-->
+    <!--</style>-->
+    <script type="text/javascript">
+        var j=100;
+        function t14(){
+//            点击一个按钮一次，div右移动100像素
+            var box=document.getElementById("box");
+            box.style.marginLeft=j+"px";
+            j+=100;
+        }
+        var i=0;
+        function t15(){
+//            点击图片，切换图片（5张）
+            var arr=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var img= document.getElementById("img");
+            i++;
+            if(i==arr.length){
+                i=0;
+            }
+            img.src=arr[i];
+        }
+    </script>
+</head>
+<body>
+    <div id="box" class="box" style="width: 100px; height: 100px; background: yellow;"></div>
+    <img src="img/a01.png" id="img">
+    <button onclick="t14()">移动</button>
+    <button onclick="t15()">切换</button>
+</body>
+</html>

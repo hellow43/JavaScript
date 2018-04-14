@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        4.已知一个数组，找出最大的元素。
+            var arr=[];
+            function s01(){
+                var a=document.getElementById("str01").value;
+                var a01= a.split("#");
+                for(var i=0;i<a01.length;i++){
+                    arr[i]=a01[i];
+                }
+               var  temp=a[0];
+                for(var i=0;i<arr.length-1;i++){
+                    if(temp<arr[i+1]){
+                        temp=arr[i+1];
+                    }else{
+                        temp=arr[i];
+                    }
+                }
+                alert("max="+temp);
+            }
+    </script>
+</head>
+<body>
+    请输入数组元素，用“#”分割： <input type="text" id="str01">
+    <button onclick="s01()">最大字符</button>
+</body>
+</html>

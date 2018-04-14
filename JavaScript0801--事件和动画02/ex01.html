@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script>
+//        show()，显示元素, hide(),隐藏元素
+//        指定速度，“slow“ “normal”“fast“ 或毫秒数
+        $(function(){
+           setInterval(function(){
+               $("#img").hide(1000).show(1000)
+           },2000);
+        });
+    </script>
+</head>
+<body>
+<img id="img" src="a01.png">
+</body>
+</html>

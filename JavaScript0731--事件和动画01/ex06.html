@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 120px;  height: 100px; margin-top:150px; margin-left:400px;
+        }
+        #box div{width:30px; height:30px;margin-right:10px; margin-bottom:10px; opacity: .5;  background:green; float: left; }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $("#box div").mouseover(function(){
+                $(this).css("opacity","1");
+            });
+            $("#box div").mouseout(function(){
+                $(this).css("opacity",".5");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

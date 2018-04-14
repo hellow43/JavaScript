@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .a{border-radius: 50px; }
+        .bg{background:yellow;}
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        function addClass01(){
+            $("div[id=box]").addClass("a bg");
+        }
+        function removeClass01(){
+            $("div[id=box]").removeClass("a");
+        }
+    </script>
+</head>
+<body>
+    <div id="box" style="width:100px; height:100px; border:1px solid red;"></div>
+    <button onclick="addClass01()">change</button>
+    <button onclick="removeClass01()">delete</button>
+</body>
+</html>

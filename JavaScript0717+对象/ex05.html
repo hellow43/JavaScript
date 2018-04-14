@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function p(){
+            p.say();
+        }
+        function a(){
+            this.say=function(){
+                alert(1);
+            }
+        }
+        var a=new a();
+        a.say();
+
+        var p=new p();
+        p.call(p);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

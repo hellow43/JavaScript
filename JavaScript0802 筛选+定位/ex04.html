@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{width:100px; }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            $("img").each(function(i){
+                alert(i);
+            });
+            $.each($("img"),function(){
+                $(this).animate({width:200+"px"},1000);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <img src="a01.png" alt=""/>
+    <img src="a02.png" alt=""/>
+    <img src="a03.png" alt=""/>
+    <img src="a04.png" alt=""/>
+</body>
+</html>

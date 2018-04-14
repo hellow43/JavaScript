@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        2.有一个字符串，统计大写字母，小写字母，数字，空格及其他字符个数，存入数组。
+        function s01(){
+            var bc=0;
+            var sc=0;
+            var space=0;
+            var num=0;
+            var other=0;
+            var arr=[];
+            var a=document.getElementById("str").value;
+            for(var i=0;i< a.length;i++){
+                if(a.charCodeAt(i)<=90& a.charCodeAt(i)>=65){
+                    bc++;
+                }else if(a.charCodeAt(i)<=122& a.charCodeAt(i)>=97){
+                    sc++;
+                }else if((a.charCodeAt(i)==32)){
+                   space++;
+                }else if(a.charCodeAt(i)<=57& a.charCodeAt(i)>=48){
+                    num++;
+                }else{
+                    other++;
+                }
+            }
+            arr.push(bc,sc,space,num,other);
+            alert(arr);
+        }
+    </script>
+</head>
+<body>
+   请输入字符串： <input type="text" id="str">
+<button onclick="s01()">统计</button>
+</body>
+</html>

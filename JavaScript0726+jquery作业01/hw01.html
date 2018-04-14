@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{margin:150px; }
+        select{}
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+//        已知一个select，向select中添加选项（数据从文本框里获取）
+        function add01(){
+            var val=$("input").val();
+            $("select[id='sel']").append("<option>"+val+"</option>");
+//            alert($("select[id='sel']").val("val"));
+        }
+    </script>
+</head>
+<body >
+<select id="sel" >
+    <option>1111111111</option>
+    <option>1111111111</option>
+    <option>1111111111</option>
+    <option>1111111111</option>
+    <option>1111111111</option>
+    <option>1111111111</option>
+</select>
+<input type="text">
+<button onclick="add01()">add</button>
+</body>
+</html>

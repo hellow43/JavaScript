@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        for(a=0;a<=999;a++){
+            var i=a%10;
+            var j=((a-i)%100)/10;
+            var k=(a-i-j*10)/100;
+            var result= i*i*i+j*j*j+k*k*k;
+           if(a==result){
+               alert(a+"该数为水仙花数")；
+           }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

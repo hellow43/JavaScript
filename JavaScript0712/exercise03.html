@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function p1(e){
+            var x= e.clientX;
+            var y= e.clientY;
+//            x.style.left += 5 + "px";
+//            y.style.top+= 5 + "px";
+            var x1= e.screenX;
+            var y1= e.screenY;
+
+            var x2= e.offsetX;
+            var y2= e.offsetY;
+
+            console.log(x+" " +y);
+            console.log(x1+" " +y1);
+            console.log(x2+" " +y2);
+
+        }
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" style="position: absolute;" onclick="p1(event)" >
+</body>
+</html>

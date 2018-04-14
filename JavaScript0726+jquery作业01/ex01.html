@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {margin:200px;}
+        ul li{margin-left: 10px; list-style: none;text-align: center; width:30px; height:20px; border:1px black solid; float: left; line-height: 20px;}
+        .a {background:plum;}
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        function change(){
+            $("ul li").click(function(){
+
+                $(this).toggleClass("a");
+            })
+        }
+    </script>
+</head>
+<body onload="change()">
+    <ul>
+        <li >1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>

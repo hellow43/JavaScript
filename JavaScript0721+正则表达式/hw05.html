@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        手机检测
+            function jc02(){
+                var tel=document.getElementById("tel");
+                var reg=/^(13|15|17|18)[\d]{9}$/;
+                if(reg.test(tel.value)){
+                    span.innerHTML="输入符合要求";
+                }else{
+                    span.innerHTML="输入不符合要求";
+                }
+                mail.onfocus=function(){
+                    span.innerHTML="";
+                }
+            }
+    </script>
+</head>
+<body>
+请输入手机号码：<input type="text" id="tel">
+<button onclick="jc02()">检测</button>
+<span id="span"></span>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <title></title>
+    <style>
+        #a{margin-left: 600px; padding-top:100px;}
+        #list{height:20px; margin-top:250px;margin-left: 600px; }
+        li{border-radius: 5px; float: left; width:10px; height:19px; }
+        .bg{ color: aqua !important;}
+        li:hover{color: aqua !important;}
+    </style>
+    <script>
+        //9.做图片轮播效果，与setInterval()相结合,自动轮播
+        var i=0;
+        function change(){
+            var img=["img/a01.png","img/a02.png","img/a03.png","img/a04.png","img/a05.png"];
+            var a=document.getElementById("a");
+            i++;
+            if(i==img.length) {
+                i = 0;
+            }
+            a.src=img[i];
+            bannerIcon();
+            }
+        function bannerIcon(){
+            var list=document.getElementById("list");
+            var li=list.getElementsByTagName("li");
+            for(var j=0;j<li.length;j++){
+                li[j].className="";
+            }
+
+            li[i].className="bg";
+        }
+        setInterval("change()",1000)
+    </script>
+</head>
+<body>
+    <img src="img/a01.png" id="a">
+    <ul id="list">
+        <li class="bg"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <button onclick="change()">change</button>
+</body>
+</html>

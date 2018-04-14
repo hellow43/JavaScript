@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function jiou() {
+            var a = prompt("please input a number");
+            if (a % 2 != 0) {
+                document.write("该数为奇数");
+            } else {
+                document.write("该数为偶数");
+            }
+        }
+
+        function yinshu(){
+            var a=prompt("please input a number");
+            var b=prompt("please input a number");
+            var j=0;
+            for(var i=1; i<=b;i++){
+                if(a%i==0&b%i==0){
+                    j=i;
+                }
+            }document.write("最大公约数为"+j+"<br />");
+            for(var i=a;i<=(a*b);i++ ){
+                if(i%a==0&i%b==0){
+                    j=i;
+                    break;
+                }
+            }document.write("最小公倍数为"+j);}
+        function nixu(a){
+            var a=prompt("please input a number");
+            while()
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="jiou()">判断奇偶</button>
+    <button onclick="yinshu()">求因数</button>
+</body>
+</html>

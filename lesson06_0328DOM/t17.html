@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body{
+            margin: 0;
+
+        }
+        *{
+            list-style: none;
+            border: none;
+        }
+        #list{
+            margin-left:300px;
+            margin-top: 100px;
+            width:300px;
+            height:20px;
+            border-right: 1px solid black;
+        }
+        #list li{
+            float: left;
+            width:59px;
+            height:20px;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            line-height: 20px;
+        }
+        #box div{
+            width:299px;
+            height:200px;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            position: absolute;
+            top:120px; left:340px;
+        }
+        .dis{
+            display: none;
+        }
+        .borderbottom{
+            border-bottom: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        function t17(i){
+//            选项卡效果
+            var list = document.getElementById("list");
+            var li01=list.getElementsByTagName("li");
+            var box=document.getElementById("box");
+            var box01=box.getElementsByTagName("div");
+            for(var j=0;j<box01.length;j++){
+                box01[j].style.display="none";
+                li01[j].className="borderbottom";
+            }
+            box01[i].style.display="block";
+            li01[i].className="";
+        }
+    </script>
+</head>
+<body>
+    <ul id="list">
+        <li onclick="t17(0)" >1</li>
+        <li onclick="t17(1)" class="borderbottom">2</li>
+        <li onclick="t17(2)" class="borderbottom">3</li>
+        <li onclick="t17(3)" class="borderbottom">4</li>
+        <li onclick="t17(4)" class="borderbottom">5</li>
+    </ul>
+    <div id="box">
+        <div>1</div>
+        <div class="dis">2</div>
+        <div class="dis">3</div>
+        <div class="dis">4</div>
+        <div class="dis">5</div>
+</div>
+</body>
+</html>

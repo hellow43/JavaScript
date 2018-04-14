@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{margin:0;}
+        #content{width:515px;height:130px;   background: red; position: relative;}
+        #box{width:1200px; height:130px ; position: absolute; left:0; }
+         img{float: left; }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        var i=0;
+        function left01(){
+           var left= $("#box").css("left");
+//            alert(left);
+            if(i<$("img").length-4){
+                left=parseInt(left)-130+"px";
+                var left=$("#box").css("left",left);
+                i++;//控制变量
+            }
+        }
+        function right01(){
+            var left= $("#box").css("left");
+            if(i>0){
+                left=parseInt(left)+130+"px";
+                var left=$("#box").css("left",left);
+                i--;
+            }
+        }
+        if(i>0){
+            $("#rbtn").attr("disabled",false);
+        }
+        if(i=0){
+            $("#rbtn").attr("disabled",true);
+        }
+    </script>
+</head>
+<body>
+<button onclick="left01()" id="lbtn">&lt;</button>
+<button onclick="right01()" id="rbtn" >&gt;</button>
+<div id="content">
+    <div id="box">
+        <img src="a01.png">
+        <img src="a02.png">
+        <img src="a03.png">
+        <img src="a04.png">
+        <img src="a05.png">
+        <img src="a01.png">
+        <img src="a02.png">
+    </div>
+</div>
+</body>
+</html>

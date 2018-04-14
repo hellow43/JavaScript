@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        var arr01=[50,49,65,3,90];
+//        var arr01 = new Array(5);
+//        arr01=[50,49,65,3,90];
+//        for(var i=0;vai<arr01.length;i++){
+//            arr01[i]=prompt()-0;
+//        }
+
+
+
+        function t0(){
+            for(var i=0;i<arr01.length;i++){
+                alert(arr01);
+                break;
+            }
+        }
+        function t1(){
+//            1.把5个学生的成绩存入数组，计算平均分。
+            var sum=0;
+            for(var j=0; j<arr01.length;j++){
+                sum += arr01[j];
+            }
+            var average = sum / arr01.length;
+            alert("五个学生的平均分为"+ average);
+        }
+        function t2(){
+//            2.把5个学生的成绩存入数组，计算有多少个不及格。
+            var c=0;
+            for(var i=0 ; i<arr01.length; i++){
+                if(arr01[i]<60){
+                    c++;
+                }
+            }
+            alert("不及格人数为"+c);
+        }
+        function t3(){
+//            3.把5个学生的成绩存入数组，求所有不及格的学生的分数和。
+            var c=0;
+            for(var i=0 ; i<arr01.length; i++){
+                if(arr01[i]<60){
+                    c+=arr01[i];
+                }
+            }
+            alert("不及格学生分数和为"+c);
+        }
+        function t4(){
+//            4.把5个学生的成绩存入数组，计算分数为奇数的有多少。
+            var c = 0;
+            for(var i=0 ; i<arr01.length;i++){
+                if(arr01[i]%2!=0){
+                    c+=1;
+                }
+            }
+            alert("分数为奇数的有"+c+"人");
+        }
+        function t5(){
+//            5.把5个学生的成绩存入数组，求多少个人分数为质数。
+            var c = 0;
+            for(var i=0 ;i<arr01.length; i++){
+                var t = true;
+                if(arr01[i]==1){
+                    t=false;
+                }
+                for(var j=2; j<arr01[i];j++){
+                    if(arr01[i]%j==0){
+                        t=false;
+                    }
+                }
+                if(t){
+                    c ++;
+                }
+            }
+            alert("分数为质数的有"+c+"人");
+        }
+
+        function t6(){
+//            6.把5个学生的成绩存入数组，求多少个人分数以5结尾。
+            var c =0;
+            for(var i=0; i<arr01.length;i++){
+                if(arr01[i]%10==5){
+                    c++;
+                }
+            }alert("分数以5结尾的有"+c+"人");
+        }
+
+        function t7(){
+//            7.把5个学生的成绩存入数组，求每个人分数各位之和。
+            var x=0;
+            var sum = 0;
+            for(var i=0 ; i<arr01.length;i++){
+                sum+=arr01[i]%10;
+            }
+            alert("个位数之和"+sum);
+//            for(var i=0 ; i<arr01.length;i++){
+//                while( arr01[i]>0){
+//                    x=arr01[i]%10;
+//                    c+=x;
+//                    arr01[i]=parseInt(arr01[i]/10);//取整
+//                    // arr01[i]=(arr01[i]-x)/10;
+//
+//                }
+//            }alert("各位数和为"+g);
+        }
+
+        function t8(){
+//            8.已知一个数组，前三个值和后三个交换位置
+            var arr=[1,2,3,4,5,6];
+            var temp=0;
+            for (var i=0;i<arr.length/2;i++){
+                var temp =arr[i];
+                arr[i]=arr[arr.length-1-i];
+                arr[arr.length-1-i]=temp;
+            }
+            alert(arr);
+        }
+
+        function t9(){
+//            9.已知一个数组，把所有的值累加入第一值里值，其余位置变0
+            var arr=[1,2,3,4,5,6];
+            var sum=0;
+            for(var i=0;i<arr.length;i++){
+                sum+=arr[i];
+                arr[i]=0;
+            }
+            arr[0]=sum;
+            alert(arr);
+        }
+
+        function t10(){
+//            10.已知一个数组，把第N-M个元素变成0（N,M是随机的值，小于数组长度，N<M）
+            var arr=[1,4,5,35,2,75,8,47];
+            var n=parseInt(Math.random()*arr.length);
+            var m=parseInt(Math.random()*arr.length);
+            var min = n<m ? n : m;
+            var max = n>m ? n : m;
+            for(var i=min-1;i<=max-1;i++){
+                arr[i]=0;
+            }
+            alert(n+" "+m+" "+min);
+            alert(arr);
+
+        }
+        function t11(){
+//            已知一个数组，把所有元素向后移动一位，最后一位移动到最前。
+            var arr=[1,2,3,4,5,6];
+            var last=arr[arr.length-1];
+            var temp=0;
+            for(var i=arr.length-1;i>0;i--){
+                var temp=arr[i-1];
+                arr[i]=temp;
+            }
+//            for(var i=1;i<arr.length-1;i++){
+//                var temp=arr[i+1];
+//                arr[i+1]=temp;
+//            }   这样写不可以，因为后面的数在第一次已经被覆盖，没有办法再去覆盖
+            arr[0]=last;
+            alert(arr);
+        }
+
+    </script>
+</head>
+<body>
+        <input type="button" value="显示所有成绩" onclick="t0()">
+        <input type="button" value="no.01" onclick="t1()">
+        <input type="button" value="no.02" onclick="t2()">
+        <input type="button" value="no.03" onclick="t3()">
+        <input type="button" value="no.04" onclick="t4()">
+        <input type="button" value="no.05" onclick="t5()">
+        <input type="button" value="no.06" onclick="t6()">
+        <input type="button" value="no.07" onclick="t7()">
+        <input type="button" value="no.08" onclick="t8()">
+        <input type="button" value="no.09" onclick="t9()">
+        <input type="button" value="no.10" onclick="t10()">
+        <input type="button" value="no.11" onclick="t11()">
+</body>
+</html>

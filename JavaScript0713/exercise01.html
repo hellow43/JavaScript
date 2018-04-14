@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function m01() {
+            var city = document.getElementById("city");
+            var list = document.getElementById("list");
+            var city01 = list.getElementsByTagName("li");
+            for (var i = 0; i < city01.length; i++) {
+                city01[i].onclick = function () {
+                        city.innerHTML = this.innerHTML;
+                    }
+            }
+        }
+    </script>
+</head>
+<body onload="m01()">
+    <div id="city">北京</div>
+    <ul id="list">
+        <li>上海</li>
+        <li>长沙</li>
+        <li>郑州</li>
+        <li>西安</li>
+        <li>沈阳</li>
+    </ul>
+</body>
+</html>

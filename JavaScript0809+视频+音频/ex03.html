@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function k(){
+            var video = document.getElementById("video");
+            var btn = document.getElementById("btn");
+            video.play();
+            btn.value = "暂停";
+            btn.onclick = z;
+        }
+        function z(){
+            var video = document.getElementById("video");
+            var btn = document.getElementById("btn");
+            video.pause();
+            btn.value = "开始";
+            btn.onclick = k;
+        }
+        function k1(){
+            var video = document.getElementById("video");
+            video.currentTime += 10;
+        }
+        function k2(){
+            var video = document.getElementById("video");
+            video.currentTime -= 10;
+        }
+        function l(){
+            var video = document.getElementById("video");
+            alert(video.duration);
+        }
+        function j(){
+            var video = document.getElementById("video");
+            var btn = document.getElementById("btn1");
+            if(video.muted){
+                video.muted = false;
+                btn.value = "静音";
+            }else{
+                video.muted = true;
+                btn.value = "不静音"
+            }
+        }
+        function m(){
+            var video = document.getElementById("video");
+            var v = video.networkState;
+        }
+        function h(){
+            var video = document.getElementById("video");
+            video.playbackRate = 10;
+        }
+        function i(){
+            var video = document.getElementById("video");
+            video.playbackRate = 1/10;
+        }
+    </script>
+</head>
+<body>
+<video id="video" src="movie.webm" controls>
+    此版本浏览器不支持video标签，请更新浏览器！
+</video>
+<input type="button" id="btn" onclick="k()" value="开始">
+<input type="button" onclick="k1()" value="快进">
+<input type="button" onclick="k2()" value="后退">
+<input type="button" onclick="l()" value="视频时间">
+<input type="button" onclick="j()" id="btn1" value="静音">
+<input type="button" onclick="m()" id="" value="网络环境">
+<input type="button" onclick="h()" value="快">
+<input type="button" onclick="i()" value="慢">
+</body>
+</html>

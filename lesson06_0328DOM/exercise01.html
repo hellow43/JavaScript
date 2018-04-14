@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        function pic(){
+            var img01 = document.getElementById("img01");
+//            img01.width="200";
+//            html属性和css样式同时写，执行css样式
+//            html的width属性没有单位，css中width样式有单位px
+            img01.style.width="400px";
+            img01.src="img/a01.png";
+        }
+    </script>
+</head>
+<body>
+    <img src="img/a.png" id="img01" onclick="pic()">
+</body>
+</html>

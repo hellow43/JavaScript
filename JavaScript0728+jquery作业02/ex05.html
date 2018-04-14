@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #img{width:80px; height:80px; }
+        #content{width:1100px; margin-top:10px;  }
+        #content >div{border:1px solid black; margin-bottom:10px; text-align: center;  width:120px; height:120px;  float:left; margin-right:10px; }
+        #content >div img{width:100px; height:100px;}
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+//        饥饿的小青蛙：有一只小青蛙，饿坏了，收集4只瓢虫喂它，每吃一只，他就长大一点，吃饱了它就开心了。 选择游戏级别
+        var h=null;
+        function start01(){
+           clearInterval(h);
+           h=setInterval("start00()",$("#sel").val());
+        }
+        function start00(){
+            var div=$("#content div");
+            for(var i=0;i<div.length;i++){
+                var a= parseInt(Math.random()*div.length);
+                var b= parseInt(Math.random()*div.length);
+                var x= $(div[a]).html();
+                var y= $(div[b]).html();
+                $(div[a]).html(y);
+                $(div[b]).html(x);
+            }
+
+                $("#content img").click(function(){
+                    $(this).remove();
+                    var wid=parseInt($("#img").css("width"));
+                    wid+=50;
+                    $("#img").css("width",wid+"px");
+                    $("#img").css("height",wid+"px");
+                    if($("#content img").length==0){
+                        alert("full");
+                    }
+                });
+        }
+        function restart(){
+            clearInterval(h);
+            $("#content div").html("");
+            $("#content div:eq(0)").html("<img src='a01.png'>");
+            $("#content div:eq(1)").html("<img src='a02.png'>");
+            $("#content div:eq(2)").html("<img src='a03.png'>");
+            $("#content div:eq(3)").html("<img src='a04.png'>");
+            $("#img").css("width","100px");
+            $("#img").css("height","100px");
+        }
+    </script>
+</head>
+<body>
+<img id="img" src="hhhh.png">
+<button onclick="start01()">start</button>
+<button onclick="restart()">restart</button>
+选择级别：<select id="sel" >
+    <option>第一级</option>
+    <option>第二级</option>
+    <option>第三级</option>
+</select>
+    <div id="content">
+        <div><img src="a01.png"></div>
+        <div><img src="a02.png"></div>
+        <div><img src="a03.png"></div>
+        <div><img src="a04.png"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

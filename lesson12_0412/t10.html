@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+//        10.秒表，可以开始，可以停止，可以暂停。
+        var h=0;
+        var m=0;
+        var s=0;
+        var hs=0;
+        var t=null;
+        function btn(){
+            var box=document.getElementById("box");
+            hs++;
+            if(hs>100){
+                s++;
+                hs=0;
+            }else if(s>59){
+                m++;
+                s=0;
+            }else if(m>59){
+                h++;
+                m=0;
+            }
+            box.innerHTML=h+":"+m+":"+s+":"+hs;
+        }
+        function btn01(){
+            clearInterval(t);
+            t=setInterval("btn()",10);
+        }
+        function btn02(){
+            clearInterval(t);
+        }
+        function btn03(){
+            h=0;
+            m=0;
+             s=0;
+             hs=0;
+            var box=document.getElementById("box");
+            box.innerHTML=h+":"+m+":"+s+":"+hs;
+        }
+    </script>
+</head>
+<body>
+    <div id="box">0:0:0:0</div>
+    <button onclick="btn01()">开始</button>
+    <button onclick="btn02()">暂停</button>
+    <button onclick="btn03()">清空</button>
+</body>
+</html>

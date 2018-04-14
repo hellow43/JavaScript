@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #content {width:480px ; height:130px;  overflow: hidden;  border:1px black solid ; background: green; position:relative;}
+        #box1,#box2{float: left; width:600px; }
+        #box1{ position: absolute; left:0;}
+        #box2{ position: absolute; left:600px;}
+        img{width:120px;float: left; }
+    </style>
+    <script  src="jquery.js"></script>
+    <script>
+        function left1(){
+          var left1= parseInt($("#box1").css("left")) ;
+          var left2= parseInt($("#box2").css("left")) ;
+           left1-=120;
+            left2-=120;
+            $("#box1").css("left",left1+"px") ;
+            $("#box2").css("left",left2+"px") ;
+//            alert(left1);
+//            if((left1+600) == 0){
+//                left1  = 0;
+//            }
+
+            if(left1==-720){
+                left1=0;
+                left2=600;
+                $("#box1").css("left",left1+"px") ;
+                $("#box2").css("left",left2+"px") ;
+            }
+        }
+        function right1(){
+            var left1= parseInt($("#box1").css("left")) ;
+            var left2= parseInt($("#box2").css("left")) ;
+            left1+=120;
+            left2+=120;
+            $("#box1").css("left",left1+"px") ;
+            $("#box2").css("left",left2+"px") ;
+        }
+    </script>
+</head>
+<body>
+<button onclick="left1()">&lt;</button>
+<button onclick="right1()">&gt;</button>
+    <div id="content">
+            <div id="box1">
+                <img src="a01.png">
+                <img src="a02.png">
+                <img src="a03.png">
+                <img src="a04.png">
+                <img src="a05.png">
+            </div>
+            <div id="box2">
+                <img src="a01.png">
+                <img src="a02.png">
+                <img src="a03.png">
+                <img src="a04.png">
+                <img src="a05.png">
+            </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        5．图片放大镜功能
+        function m(obj,e){
+            var box=document.getElementById("box");
+            var img01=document.getElementById("img01");
+            img01.src=obj.src;
+            box.style.display="block";
+            var x= e.clientX;
+            var y= e.clientY;
+            img01.style.left=-x*3.5+"px";
+            img01.style.top=-y*3.5+"px";
+
+        }
+        function m01(){
+            var box=document.getElementById("box");
+            box.style.display="none";
+        }
+    </script>
+</head>
+<body onload="m()">
+    <img id="img" onmousemove="m(this,event)" onmouseout="m01()" style="width:200px;" src="img/a.jpg">
+    <div id="box" style="width: 500px; height:300px; border: 1px solid pink; overflow: hidden; display:none;  position: relative; ">
+        <img id="img01"   style="position: absolute; ">
+    </div>
+</body>
+</html>

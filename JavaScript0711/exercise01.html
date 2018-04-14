@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+       function add(){
+           var a=document.getElementById("idCard").value;
+           var b=a.charAt(16);
+           var c=document.getElementById("span");
+           if(a.length==18&&a<=999999999999999999&&a>=0){
+               if(b%2==0){
+                   c.innerHTML="女性";
+               }else{
+                   c.innerHTML="男性";
+               }
+           }else{
+               c.innerHTML="请输入合法内容";
+           }
+
+       }
+    </script>
+</head>
+<body>
+    身份证号：<input type="text" id="idCard">
+            <button onclick="add()">注册</button><span id="span"></span>
+</body>
+</html>

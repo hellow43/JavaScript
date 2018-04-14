@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #div01{width:130px; height:130px ; position: relative;  }
+    </style>
+    <script>
+        function oPic(obj,id){
+//            var img=document.getElementById("box"+id);
+//            img.style.display="block";
+            var box=document.getElementById("box"+id);
+            box.style.display="block";
+
+        }
+        function oPic1(obj,id){
+//        var img=document.getElementById("box"+id);
+//        img.style.display="none";
+            obj.style.display="none";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" style="float: left; position: relative;">
+        <img onmouseover="oPic(this,1)"src="img/a01.png">
+        <div onmouseout="oPic1(this,1)" id="box1" style=" position: absolute; left: 0; top:0;
+         display:none;width: 130px; height: 130px;  color:white; line-height:130px ;
+         text-align: center; background-color:rgba(0,0,0,.5);">
+            显示
+        </div>
+    </div>
+        <div id="div2"  style="float: left; position: relative;">
+            <img onmouseover="oPic(this,2)"src="img/a01.png">
+            <div onmouseout="oPic1(this,2)" id="box2" style="position: absolute; left: 0; top:0;
+             display:none;width: 130px; height: 130px;  color:white; line-height:130px ;
+             text-align: center; background-color:rgba(0,0,0,.5);">
+                显示
+            </div>
+        </div>
+</body>
+</html>
